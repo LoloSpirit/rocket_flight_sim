@@ -80,13 +80,13 @@ class Plotter:
 
             # Update the plots
             ax_left.clear()
+            velocity_angle = self.local_horizon[idx] + (np.pi/2 - self.gamma[idx])
+            rocket = plt.Arrow(rocket_pos[0], rocket_pos[1], self.height[idx] * math.sin(velocity_angle), self.height[idx] * math.cos(velocity_angle), width=self.height[idx] / 20, color='green')
             ax_left.plot(rocket_pos[0], rocket_pos[1], color='green', marker='o', markersize=5)
             ax_left.plot(x,y, color='red')
             ax_left.add_artist(earth)
+            ax_left.add_artist(rocket)
 
-            zoom = 10
-            p = rocket_pos
-            scale = max(abs(p[0] * (zoom-1)), 10)
             ax_left.set_aspect('equal')
 
             # plot points to define min size for t=0
@@ -126,8 +126,8 @@ class Plotter:
         ax3.set_ylabel('Mass [t]')
         ax3.set_xlabel('Time [s]')
 
-        plt.show()
         update_trajectory(self.time[-1])
+        plt.show()
 
     def ellipse_circle_intersections(self, a, e, R):
         # Calculate the argument for the arccos function
