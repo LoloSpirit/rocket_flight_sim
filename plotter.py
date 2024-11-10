@@ -49,23 +49,27 @@ class Plotter:
             # calculate the trajectory
             distance = flight_sim.earth_radius + self.height[idx]
             mu = flight_sim.gravitational_constant * flight_sim.earth_mass
-            energy = 0.5 * (self.velocity[idx] * math.cos(self.gamma[idx])) ** 2 - mu / distance
+            energy = 0.5 * (self.velocity[idx]) ** 2 - mu / distance
             semi_major_axis = -mu / (2 * energy)
             angular_momentum = distance * self.velocity[idx] * math.cos(self.gamma[idx])
             eccentricity = (1 + 2 * energy * angular_momentum ** 2 / (mu ** 2)) ** 0.5
 
             # trace
-            intersections = self.ellipse_circle_intersections(semi_major_axis, eccentricity, flight_sim.earth_radius)
-            if len(intersections) == 0:
-                intersections = [0, 2 * np.pi]
+            intersections_earth = self.ellipse_circle_intersections(semi_major_axis, eccentricity, flight_sim.earth_radius)
+            intersections_rocket = self.ellipse_circle_intersections(semi_major_axis, eccentricity, distance)
+            if len(intersections_earth) == 0:
+                intersections_earth = [0, 2 * np.pi]
+
+            # align with rocket position
+            offset_angle = self.local_horizon[idx] - (intersections_rocket[1] - np.pi)
 
             x = []
             y = []
             try:
-                angle = intersections[0] - self.local_horizon[idx]
-                delta = intersections[1] - intersections[0]
+                angle = intersections_earth[0] - offset_angle
+                delta = intersections_earth[1] - intersections_earth[0]
                 for i in range(5000):
-                    true_anomaly = angle + self.local_horizon[idx]
+                    true_anomaly = angle + offset_angle
                     r = semi_major_axis * (1 - eccentricity ** 2) / (1 + eccentricity * math.cos(true_anomaly))
 
                     x.append(r * math.sin(angle))
