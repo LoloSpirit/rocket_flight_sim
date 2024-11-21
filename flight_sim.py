@@ -35,7 +35,7 @@ class GravityTurn:
 
 
 class FlightSim:
-    def __init__(self, stages, gravity_turn: GravityTurn, time_step=0.1):
+    def __init__(self, stages, gravity_turn: GravityTurn, time_step=0.2):
         self.stages = stages
         self.time_step = time_step
         self.gravity_turn = gravity_turn
@@ -60,7 +60,7 @@ class FlightSim:
             while stage_time < stage.burn_time:
                 m = eff_payload_mass + stage.mass_at_time(stage_time)
                 v += acceleration_in_dir_of_flight(stage.thrust, v, m, h, a, gamma) * self.time_step
-                h += v * math.cos(a) * self.time_step
+                h += v * math.cos(math.pi/2-gamma) * self.time_step
                 gamma += angular_velocity(stage.thrust, v, m, h, a, gamma) * self.time_step
                 stage_time += self.time_step
                 t += self.time_step

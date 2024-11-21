@@ -32,6 +32,7 @@ class Plotter:
         # Set up the slider
         ax_freq = plt.axes([0.2, 0.1, 0.65, 0.03], facecolor="black")
         plt.subplots_adjust(hspace=0.5)
+        plt.title = "Rocket ascent trajectory"
         time_slider = Slider(
             ax=ax_freq,
             label="Time",
@@ -46,7 +47,7 @@ class Plotter:
             # closest time index
             idx = min(range(len(self.time)), key=lambda i: abs(self.time[i] - time))
 
-            # calculate the trajectory
+            # calculate the trajectory parameters to construct an ellipse
             distance = flight_sim.earth_radius + self.height[idx]
             mu = flight_sim.gravitational_constant * flight_sim.earth_mass
             energy = 0.5 * (self.velocity[idx]) ** 2 - mu / distance
@@ -54,26 +55,26 @@ class Plotter:
             angular_momentum = distance * self.velocity[idx] * math.cos(self.gamma[idx])
             eccentricity = (1 + 2 * energy * angular_momentum ** 2 / (mu ** 2)) ** 0.5
 
-            # trace
+            # find the intersections with a circle with the radius with earth and height of the rocket
             intersections_earth = self.ellipse_circle_intersections(semi_major_axis, eccentricity, flight_sim.earth_radius)
             intersections_rocket = self.ellipse_circle_intersections(semi_major_axis, eccentricity, distance)
             if len(intersections_earth) == 0:
                 intersections_earth = [0, 2 * np.pi]
 
-            # align with rocket position
+            # calculate the angle by which the ellipse has to be rotated to align with the rockets position
             offset_angle = self.local_horizon[idx] - (intersections_rocket[1] - np.pi)
 
+            # trace the ellipse between the first and second earth intersections
             x = []
             y = []
             try:
-                angle = intersections_earth[0] - offset_angle
+                angle = intersections_earth[0]
                 delta = intersections_earth[1] - intersections_earth[0]
                 for i in range(5000):
-                    true_anomaly = angle + offset_angle
-                    r = semi_major_axis * (1 - eccentricity ** 2) / (1 + eccentricity * math.cos(true_anomaly))
-
-                    x.append(r * math.sin(angle))
-                    y.append(-r * math.cos(angle))
+                    r = semi_major_axis * (1 - eccentricity ** 2) / (1 + eccentricity * math.cos(angle))
+                    # adding the offset angle rotates the ellipse
+                    x.append(r * math.sin(angle - offset_angle))
+                    y.append(-r * math.cos(angle - offset_angle))
 
                     angle += delta / 5000
 
@@ -93,59 +94,59 @@ class Plotter:
 
             ax_left.set_aspect('equal')
 
-            # plot points to define min size for t=0
+            # plot additional points to define min size for t=0
             ax_left.plot(-10, flight_sim.earth_radius, color='black', marker='o', markersize=.1)
             ax_left.plot(10, flight_sim.earth_radius, color='black', marker='o', markersize=.1)
             ax_left.plot(rocket_pos[0], max(10, 2 * self.height[idx]) + flight_sim.earth_radius, color='black', marker='o', markersize=.1)
 
-
-            ax_left.set_title('Trajectory')
-            ax_left.set_xlabel('x [m]')
-            ax_left.set_ylabel('y [m]')
-
-            height_pos.center = (self.time[idx], 0.001 * self.height[idx])
+            # plot points to show current value in the graphs
+            height_pos.set_data(self.time[idx], 0.001 * self.height[idx])
+            mass_pos.set_data(self.time[idx], 0.001 * self.mass[idx])
+            vel_pos.set_data(self.time[idx], self.velocity[idx])
 
             fig.canvas.draw_idle()  # Redraw the figure
 
         # draw the earth
         earth = plt.Circle((0, 0), flight_sim.earth_radius, color='black')
         ax_left.add_artist(earth)
+        ax_left.set_title('Trajectory')
+        ax_left.set_xlabel('x [m]')
+        ax_left.set_ylabel('y [m]')
 
-        height_pos = plt.Circle((0,0), 1, color='black')
-
-        # Attach the update function to the slider
+        # attach the update function to the slider
         time_slider.on_changed(update_trajectory)
 
         ax1.plot(self.time, [h * 0.001 for h in self.height])
-        ax1.add_artist(height_pos)
+        height_pos, = ax1.plot((0,0), 'ro', color='black')
         ax1.set_title('Height over time')
         ax1.set_ylabel('Height [km]')
 
         ax2.plot(self.time, self.velocity)
+        vel_pos, = ax2.plot((0,0), 'ro', color='black')
         ax2.set_title('Velocity over time')
         ax2.set_ylabel('Velocity [m/s]')
 
         ax3.plot(self.time, [m * 0.001 for m in self.mass])
+        mass_pos, = ax3.plot((0,0), 'ro', color='black')
         ax3.set_title('Mass over time')
         ax3.set_ylabel('Mass [t]')
         ax3.set_xlabel('Time [s]')
 
-        update_trajectory(self.time[-1])
+        update_trajectory(self.time[0])
         plt.show()
 
-    def ellipse_circle_intersections(self, a, e, R):
-        # Calculate the argument for the arccos function
+    @staticmethod
+    def ellipse_circle_intersections(a, e, R):
+        # calculate the argument for the arccos function
         argument = (a * (1 - e ** 2) - R) / (R * e)
 
-        # Check if the argument is within the valid range for arccos
         if argument < -1 or argument > 1:
             return []
 
-        # Calculate the two intersection angles (they will be symmetric)
+        # calculate the two intersection angles
         theta1 = math.acos(argument)
         theta2 = 2 * np.pi - theta1  # Symmetric angle
 
-        # Intersection points in polar coordinates (r, theta)
         intersection_points = [theta1, theta2]
 
         return intersection_points
