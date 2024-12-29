@@ -145,7 +145,7 @@ class Plotter:
 
         # calculate the two intersection angles
         theta1 = math.acos(argument)
-        theta2 = 2 * np.pi - theta1  # Symmetric angle
+        theta2 = 2 * np.pi - theta1  # symmetry
 
         intersection_points = [theta1, theta2]
 

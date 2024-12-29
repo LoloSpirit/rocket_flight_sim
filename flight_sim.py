@@ -5,7 +5,6 @@ earth_mass = 5.972 * 10 ** 24  # kg
 earth_radius = 6371000  # m
 effective_area = 15  # m^2
 
-
 def gravitational_acceleration(height):
     return gravitational_constant * earth_mass / ((earth_radius + height) ** 2)
 
@@ -14,12 +13,14 @@ def atmospheric_density(height):
     return 1.2 * math.e ** (-1.244268 * (10 ** -4) * height)
 
 
-def acceleration_in_dir_of_flight(thrust, velocity, mass, height, a, gamma):
+def acceleration_in_dir_of_flight(thrust, velocity, mass, height, a, gamma, sim):
     T = thrust * math.cos(a)  # in the direction of the flight
     D = atmospheric_density(height) * (velocity ** 2) * effective_area * 0.5
-    Fg = mass * gravitational_acceleration(height)
-    return (T - D - Fg * math.sin(gamma)) / mass
-
+    Fg = mass * gravitational_acceleration(height) * math.sin(gamma)
+    sim.loss_drag += D / mass * sim.time_step
+    sim.loss_gravity += Fg / mass * sim.time_step
+    sim.deltaV += T / mass * sim.time_step
+    return (T - D - Fg) / mass
 
 def angular_velocity(thrust, velocity, mass, height, a, gamma):
     T = thrust * math.sin(a)  # perpendicular to the flight direction
@@ -35,6 +36,10 @@ class GravityTurn:
 
 
 class FlightSim:
+    loss_gravity = 0
+    loss_drag = 0
+    deltaV = 0
+
     def __init__(self, stages, gravity_turn: GravityTurn, time_step=0.2):
         self.stages = stages
         self.time_step = time_step
@@ -57,9 +62,10 @@ class FlightSim:
             # calculate the mass of the rest of the rocket
             eff_payload_mass = sum(s.mass_at_time(0) for s in self.stages[i + 1:])
 
+            # iterate
             while stage_time < stage.burn_time:
                 m = eff_payload_mass + stage.mass_at_time(stage_time)
-                v += acceleration_in_dir_of_flight(stage.thrust, v, m, h, a, gamma) * self.time_step
+                v += acceleration_in_dir_of_flight(stage.thrust, v, m, h, a, gamma, self) * self.time_step
                 h += v * math.cos(math.pi/2-gamma) * self.time_step
                 gamma += angular_velocity(stage.thrust, v, m, h, a, gamma) * self.time_step
                 stage_time += self.time_step
@@ -71,4 +77,7 @@ class FlightSim:
 
                 state.append((t, h, v, m, a, gamma, local_horizon))
 
+        print(f'Loss due to gravity: {self.loss_gravity} m/s')
+        print(f'Loss due to drag: {self.loss_drag} m/s')
+        print(f'Total deltaV: {self.deltaV} m/s')
         return state
