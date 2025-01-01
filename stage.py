@@ -47,7 +47,7 @@ def optimize_staging_two_stages(stages, structure_index, payload, iterations=100
 
         stage0_ratio = total_mass / (total_mass-stage0.propellant_mass)
         stage1_ratio = (total_mass - stage0.propellant_mass - stage0.structure_mass) / (stage1.structure_mass + payload)
-
+        print(stage0_ratio, stage1_ratio)
         delta = abs(stage0_ratio - stage1_ratio)
         if delta < smallest_delta:
             smallest_delta = delta

@@ -62,8 +62,9 @@ class Plotter:
             if len(intersections_earth) == 0:
                 intersections_earth = [0, 2 * np.pi]
 
+            ascending = self.height[idx-1] - self.height[idx] < 0
             # calculate the angle by which the ellipse has to be rotated to align with the rockets position
-            offset_angle = self.local_horizon[idx] - (intersections_rocket[1] - np.pi)
+            offset_angle = self.local_horizon[idx] - (intersections_rocket[1 if ascending else 0] - np.pi)
 
             # trace the ellipse between the first and second earth intersections
             x = []
@@ -100,7 +101,7 @@ class Plotter:
 
             text.set_text(f"$r_p$ = {round(self.orbit.periapsis_height / 1000,1)} km\n"
                           f"$r_a$ = {round(self.orbit.apoapsis_height / 1000,1)} km\n"
-                          f"$m_{{remaining}}$ = {round(self.mass[idx] * 0.001, 1)} t\n"
+                          f"$m_{{remaining}}$ = {round(self.mass[idx] * 0.001, 3)} t\n"
                           f"state: {self.state[idx]}")
 
             # plot additional points to define min size for t=0
