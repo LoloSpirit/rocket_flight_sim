@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a41070ab-165c-4cd2-a393-440c98b3d662" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Abstract.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anhang.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auswertung.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Einführung.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Elektronenstoßionisation.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experimenteller Aufbau.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DLD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/EA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/EGun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Kammer_3D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MCP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PTRA_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PosSig.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Restgas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Restgas_tof.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SchematischerAufbau.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Signalverlauf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Strahl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/THM_logo-eps-converted-to.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/THM_logo.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ToF_Signals.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Zero-B_Aufbau.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cfd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/logo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/main.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.bcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.lof" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/main.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.lot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.out" beforeDir="false" afterPath="$PROJECT_DIR$/main.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.run.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/main.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/main.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/schmutztitel.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/titlepage.tex" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2r2ByDIWcJrYocVxoRmRaGGDso0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a41070ab-165c-4cd2-a393-440c98b3d662" name="Changes" comment="" />
+      <created>1735747542599</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735747542599</updated>
+      <workItem from="1735747543913" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

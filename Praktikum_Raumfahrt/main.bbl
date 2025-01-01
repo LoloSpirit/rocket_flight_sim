@@ -1,0 +1,242 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{ion}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5372e7f0bbd4b5ca1102cee0b9e43453}{%
+           family={;\bibnamedelima H.\bibnamedelimi J.\bibnamedelimi Leiter;\bibnamedelimb S.\bibnamedelimi Schippers\bibnamedelimb ORCID\bibnamedelimb logo\bibnamedelimb ;\bibnamedelimb K.\bibnamedelimi Hannemann;\bibnamedelimb P.\bibnamedelimi J.\bibnamedelimi Klar},
+           familyi={;\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim O\bibinitperiod\bibinitdelim l\bibinitperiod\bibinitdelim ;\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={K.\bibnamedelimi Holste\bibnamedelimb ;\bibnamedelimb P.\bibnamedelimi Dietz;\bibnamedelimb S.\bibnamedelimi Scharmann;\bibnamedelimb K.\bibnamedelimi Keil;\bibnamedelimb T.\bibnamedelimi Henning\bibnamedelimb ;\bibnamedelimb D.\bibnamedelimi Zschätzsch;\bibnamedelimb M.\bibnamedelimi Reitemeyer;\bibnamedelimb B.\bibnamedelimi Nauschütt;\bibnamedelimb F.\bibnamedelimi Kiefer;\bibnamedelimb F.\bibnamedelimi Kunze;\bibnamedelimb J.\bibnamedelimi Zorn;\bibnamedelimb C.\bibnamedelimi Heiliger;\bibnamedelimb N.\bibnamedelimi Joshi;\bibnamedelimb U.\bibnamedelimi Probst;\bibnamedelimb R.\bibnamedelimi Thüringer;\bibnamedelimb C.\bibnamedelimi Volkmar\bibnamedelimb ;\bibnamedelimb D.\bibnamedelimi Packan;\bibnamedelimb S.\bibnamedelimi Peterschmitt;\bibnamedelimb K.\bibnamedelimi -T.\bibnamedelimi Brinkmann;\bibnamedelimb H.-G.\bibnamedelimi Zaunick;\bibnamedelimb M.\bibnamedelimi H.\bibnamedelimi Thoma;\bibnamedelimb M.\bibnamedelimi Kretschmer\bibnamedelima ORCID},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim ;\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim ;\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim Z\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim Z\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim U\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim ;\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim \bibinithyphendelim \bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim H\bibinithyphendelim G\bibinitperiod\bibinitdelim Z\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim O\bibinitperiod},
+           prefix={logo},
+           prefixi={l\bibinitperiod}}}%
+      }
+      \strng{namehash}{5372e7f0bbd4b5ca1102cee0b9e43453}
+      \strng{fullhash}{5372e7f0bbd4b5ca1102cee0b9e43453}
+      \strng{fullhashraw}{5372e7f0bbd4b5ca1102cee0b9e43453}
+      \strng{bibnamehash}{5372e7f0bbd4b5ca1102cee0b9e43453}
+      \strng{authorbibnamehash}{5372e7f0bbd4b5ca1102cee0b9e43453}
+      \strng{authornamehash}{5372e7f0bbd4b5ca1102cee0b9e43453}
+      \strng{authorfullhash}{5372e7f0bbd4b5ca1102cee0b9e43453}
+      \strng{authorfullhashraw}{5372e7f0bbd4b5ca1102cee0b9e43453}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Review of Scientific Instruments}
+      \field{title}{Ion thrusters for electric propulsion: Scientific issues developing a niche technology into a game changer}
+      \field{year}{2020}
+    \endentry
+    \entry{Holzte}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f95a60b3ad6c9c9bf2f4caada7be9f8a}{%
+           family={K.},
+           familyi={K\bibinitperiod},
+           given={Holzte},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{f95a60b3ad6c9c9bf2f4caada7be9f8a}
+      \strng{fullhash}{f95a60b3ad6c9c9bf2f4caada7be9f8a}
+      \strng{fullhashraw}{f95a60b3ad6c9c9bf2f4caada7be9f8a}
+      \strng{bibnamehash}{f95a60b3ad6c9c9bf2f4caada7be9f8a}
+      \strng{authorbibnamehash}{f95a60b3ad6c9c9bf2f4caada7be9f8a}
+      \strng{authornamehash}{f95a60b3ad6c9c9bf2f4caada7be9f8a}
+      \strng{authorfullhash}{f95a60b3ad6c9c9bf2f4caada7be9f8a}
+      \strng{authorfullhashraw}{f95a60b3ad6c9c9bf2f4caada7be9f8a}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{year}{2024}
+    \endentry
+    \entry{Lotz}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b397a264c1e71da885107a8dca56211d}{%
+           family={Lotz},
+           familyi={L\bibinitperiod},
+           given={Wolfgang},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b397a264c1e71da885107a8dca56211d}
+      \strng{fullhash}{b397a264c1e71da885107a8dca56211d}
+      \strng{fullhashraw}{b397a264c1e71da885107a8dca56211d}
+      \strng{bibnamehash}{b397a264c1e71da885107a8dca56211d}
+      \strng{authorbibnamehash}{b397a264c1e71da885107a8dca56211d}
+      \strng{authornamehash}{b397a264c1e71da885107a8dca56211d}
+      \strng{authorfullhash}{b397a264c1e71da885107a8dca56211d}
+      \strng{authorfullhashraw}{b397a264c1e71da885107a8dca56211d}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zeitschrift für Physik}
+      \field{number}{2}
+      \field{title}{An empirical formula for the electron-impact ionization crosssection.}
+      \field{volume}{206}
+      \field{year}{1967}
+      \verb{doi}
+      \verb 10.1007/BF01325928
+      \endverb
+    \endentry
+    \entry{Detektorsystem}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=bd3b12c062b4b3f5206bb7766359d7d4}{%
+           family={O.\bibnamedelimi Jagutzki},
+           familyi={O\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={V.\bibnamedelimi Mergel},
+           giveni={V\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{bd3b12c062b4b3f5206bb7766359d7d4}
+      \strng{fullhash}{bd3b12c062b4b3f5206bb7766359d7d4}
+      \strng{fullhashraw}{bd3b12c062b4b3f5206bb7766359d7d4}
+      \strng{bibnamehash}{bd3b12c062b4b3f5206bb7766359d7d4}
+      \strng{authorbibnamehash}{bd3b12c062b4b3f5206bb7766359d7d4}
+      \strng{authornamehash}{bd3b12c062b4b3f5206bb7766359d7d4}
+      \strng{authorfullhash}{bd3b12c062b4b3f5206bb7766359d7d4}
+      \strng{authorfullhashraw}{bd3b12c062b4b3f5206bb7766359d7d4}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}
+      \field{number}{244–249}
+      \field{title}{A broad-application microchannel-plate detector system for advanced particle or photon detection tasks: large area imaging, precise multi-hit timing information and high detection rate}
+      \field{volume}{477}
+      \field{year}{2002}
+    \endentry
+    \entry{EII}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=02f813d651df9d8c304f37b5e4d64867}{%
+           family={S.\bibnamedelimi M.\bibnamedelimi Younger},
+           familyi={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           given={P.\bibnamedelimi J.\bibnamedelimi O.\bibnamedelimi Teubner},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim O\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=295b2232bb6df4974174c627b1a323bc}{%
+           family={T.\bibnamedelimi D.\bibnamedelimi Märk},
+           familyi={T\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={G.\bibnamedelimi H.\bibnamedelimi Dunn},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag Wien}%
+      }
+      \strng{namehash}{02f813d651df9d8c304f37b5e4d64867}
+      \strng{fullhash}{02f813d651df9d8c304f37b5e4d64867}
+      \strng{fullhashraw}{02f813d651df9d8c304f37b5e4d64867}
+      \strng{bibnamehash}{02f813d651df9d8c304f37b5e4d64867}
+      \strng{authorbibnamehash}{02f813d651df9d8c304f37b5e4d64867}
+      \strng{authornamehash}{02f813d651df9d8c304f37b5e4d64867}
+      \strng{authorfullhash}{02f813d651df9d8c304f37b5e4d64867}
+      \strng{authorfullhashraw}{02f813d651df9d8c304f37b5e4d64867}
+      \strng{editorbibnamehash}{295b2232bb6df4974174c627b1a323bc}
+      \strng{editornamehash}{295b2232bb6df4974174c627b1a323bc}
+      \strng{editorfullhash}{295b2232bb6df4974174c627b1a323bc}
+      \strng{editorfullhashraw}{295b2232bb6df4974174c627b1a323bc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Electron Impact Ionisation}
+      \field{year}{1985}
+    \endentry
+    \entry{MCP}{patent}{}{}
+      \name{author}{1}{}{%
+        {{hash=51d2cd35108dfc0b1176905595c71319}{%
+           family={Sadeg\bibnamedelimb M.\bibnamedelimi Faris},
+           familyi={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={Kanti\bibnamedelima Jain},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{51d2cd35108dfc0b1176905595c71319}
+      \strng{fullhash}{51d2cd35108dfc0b1176905595c71319}
+      \strng{fullhashraw}{51d2cd35108dfc0b1176905595c71319}
+      \strng{bibnamehash}{51d2cd35108dfc0b1176905595c71319}
+      \strng{authorbibnamehash}{51d2cd35108dfc0b1176905595c71319}
+      \strng{authornamehash}{51d2cd35108dfc0b1176905595c71319}
+      \strng{authorfullhash}{51d2cd35108dfc0b1176905595c71319}
+      \strng{authorfullhashraw}{51d2cd35108dfc0b1176905595c71319}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{month}{10}
+      \field{number}{US5565729A}
+      \field{title}{Microchannel plate technology}
+      \field{year}{1996}
+      \field{dateera}{ce}
+    \endentry
+    \entry{Straub}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=8b0c526fc1ada9b49f013c7fc76b3c08}{%
+           family={Straub\bibnamedelimb H.\bibnamedelimi C.},
+           familyi={S\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={et\bibnamedelima al.},
+           giveni={e\bibinitperiod\bibinitdelim a\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b0c526fc1ada9b49f013c7fc76b3c08}
+      \strng{fullhash}{8b0c526fc1ada9b49f013c7fc76b3c08}
+      \strng{fullhashraw}{8b0c526fc1ada9b49f013c7fc76b3c08}
+      \strng{bibnamehash}{8b0c526fc1ada9b49f013c7fc76b3c08}
+      \strng{authorbibnamehash}{8b0c526fc1ada9b49f013c7fc76b3c08}
+      \strng{authornamehash}{8b0c526fc1ada9b49f013c7fc76b3c08}
+      \strng{authorfullhash}{8b0c526fc1ada9b49f013c7fc76b3c08}
+      \strng{authorfullhashraw}{8b0c526fc1ada9b49f013c7fc76b3c08}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review A}
+      \field{number}{2}
+      \field{title}{Absolute partial and total cross sections for electron-impact ionization of argon from threshold to 1000 eV}
+      \field{volume}{52}
+      \field{year}{1995}
+    \endentry
+    \entry{CO2}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=89a68ab9fd7ca8618aead83f9c1e9767}{%
+           family={Wirtschaft\bibnamedelimb und\bibnamedelima Ausfuhrkontrolle},
+           familyi={W\bibinitperiod\bibinitdelim u\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Bundesamt},
+           giveni={B\bibinitperiod},
+           prefix={für},
+           prefixi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{89a68ab9fd7ca8618aead83f9c1e9767}
+      \strng{fullhash}{89a68ab9fd7ca8618aead83f9c1e9767}
+      \strng{fullhashraw}{89a68ab9fd7ca8618aead83f9c1e9767}
+      \strng{bibnamehash}{89a68ab9fd7ca8618aead83f9c1e9767}
+      \strng{authorbibnamehash}{89a68ab9fd7ca8618aead83f9c1e9767}
+      \strng{authornamehash}{89a68ab9fd7ca8618aead83f9c1e9767}
+      \strng{authorfullhash}{89a68ab9fd7ca8618aead83f9c1e9767}
+      \strng{authorfullhashraw}{89a68ab9fd7ca8618aead83f9c1e9767}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Informationsblatt CO2-Faktoren}
+      \field{year}{2024}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
