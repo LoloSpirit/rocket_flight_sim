@@ -1,11 +1,11 @@
 class Stage:
-    structure_mass = 0 # in tons
-    propellant_mass = 0 # in tons
-    specific_impulse = 0 # in m/s
-    propellant_mass_flux = 0 # in kg/s
-    payload_mass = 0 # in tons
-    burn_time = 0 # in s
-    thrust = 0 # in N
+    structure_mass = 0  # in tons
+    propellant_mass = 0  # in tons
+    specific_impulse = 0  # in m/s
+    propellant_mass_flux = 0  # in kg/s
+    payload_mass = 0  # in tons
+    burn_time = 0  # in s
+    thrust = 0  # in N
 
     def __init__(self, structure_mass, propellant_mass, specific_impulse, propellant_mass_flux, payload_mass):
         self.structure_mass = structure_mass

@@ -67,7 +67,7 @@ class FlightSim:
                 # if a target orbit is specified - circularize on the last stage
                 if last_stage and self.target_orbit > 0:
                     # check if the apoapsis is reached
-                    if state.orbit.apoapsis_height:
+                    if state.orbit.apoapsis_height >= self.target_orbit:
                         print(f'Apoapsis at target height - shutting off at [{state.t}s]')
                         self.circularize(state, stage, stage_time, eff_payload_mass, simulation_states)
                         break
@@ -75,15 +75,16 @@ class FlightSim:
         print(f'Loss due to gravity: {self.loss_gravity} m/s')
         print(f'Loss due to drag: {self.loss_drag} m/s')
         print(f'Total deltaV: {self.deltaV} m/s')
-        return state
+        return simulation_states
 
     def advance_state(self, state, stage, stage_time, eff_payload_mass, engines_on=True):
         # advance the state by a time step and calculate the new values
         if engines_on:
             state.m = eff_payload_mass + stage.mass_at_time(stage_time)
-            state.v += Physics.acceleration_in_dir_of_flight(stage.thrust, state, effective_area, self) * self.time_step
             stage_time += self.time_step
 
+        thrust = stage.thrust if engines_on else 0
+        state.v += Physics.acceleration_in_dir_of_flight(thrust, state, effective_area, self) * self.time_step
         state.h += state.v * math.cos(math.pi / 2 - state.gamma) * self.time_step
         state.gamma += Physics.angular_velocity(stage.thrust, state) * self.time_step
         state.temp = Physics.max_temperature(state.v, state.h, effective_nose_radius)
@@ -116,3 +117,4 @@ class FlightSim:
             self.advance_state(state, stage, stage_time, eff_payload_mass)
             stage_time += self.time_step
             state.description = 'Circularizing'
+            simulation_states.append(copy.deepcopy(state))
