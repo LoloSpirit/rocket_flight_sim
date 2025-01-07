@@ -1,50 +1,13 @@
+import copy
 import math
+from physics import Physics, earth_radius
+from dataclasses import dataclass
+
 from orbit import Orbit
 
-gravitational_constant = 6.67430 * 10 ** -11  # m^3 kg^-1 s^-2
-earth_mass = 5.972 * 10 ** 24  # kg
-earth_radius = 6371000  # m
+# constants for this simulation
 effective_area = 15  # m^2
-effective_nose_radius = 0.5 # m
-# sutton-graves
-k = 1.7415e-4 # kg^0.5/m
-sigma = 5.67e-8 # W/m^2K^4
-
-
-def gravitational_acceleration(height):
-    return gravitational_constant * earth_mass / ((earth_radius + height) ** 2)
-
-
-def atmospheric_density(height):
-    return 1.2 * math.e ** (-1.244268 * (10 ** -4) * height)
-
-
-def acceleration_in_dir_of_flight(thrust, velocity, mass, height, a, gamma, sim):
-    T = thrust * math.cos(a)  # in the direction of the flight
-    D = atmospheric_density(height) * (velocity ** 2) * effective_area * 0.5
-    Fg = mass * gravitational_acceleration(height) * math.sin(gamma)
-    sim.loss_drag += D / mass * sim.time_step
-    sim.loss_gravity += Fg / mass * sim.time_step
-    sim.deltaV += T / mass * sim.time_step
-    return (T - D - Fg) / mass
-
-
-def nose_heat_flux(temperature, velocity, height, effective_radius, emmisivity=.8):
-    # sutton-graves
-    heat_flux_in = k * (velocity ** 3) * math.sqrt(atmospheric_density(height) / effective_radius)
-    heat_flux_out = emmisivity * sigma * ((temperature ** 4) - (293 ** 4))
-    return max(0, heat_flux_in - heat_flux_out)
-
-
-def max_temperature(velocity, height, effective_radius, emmisivity=.8):
-    return (k / (emmisivity * sigma) * (velocity ** 3) * math.sqrt(
-        atmospheric_density(height) / effective_radius) + 293**4) ** (1 / 4)
-
-
-def angular_velocity(thrust, velocity, mass, height, a, gamma):
-    T = thrust * math.sin(a)  # perpendicular to the flight direction
-    c = (-gravitational_acceleration(height) + (velocity ** 2) / (earth_radius + height))
-    return (math.cos(gamma) * c + T / mass) / velocity
+effective_nose_radius = 0.5  # m
 
 
 class GravityTurn:
@@ -52,6 +15,20 @@ class GravityTurn:
         self.start = start
         self.end = end
         self.angle = angle
+
+
+@dataclass
+class State:
+    t = 0  # passed time
+    v = 0  # velocity
+    m = 0  # mass
+    temp = 0  # temperature
+    local_horizon = 0  # angle of the local horizon in radians
+    h = 0  # height
+    a = 0  # angle of the rocket in radians
+    gamma = math.pi * 0.5  # angle of the velocity in respect to the local horizon in radians
+    orbit = None
+    description = ''
 
 
 class FlightSim:
@@ -66,75 +43,76 @@ class FlightSim:
         self.target_orbit = target_orbit
 
     def simulate(self):
-        t = 0  # passed time
-        v = 0  # velocity
-        m = 0  # mass
-        temp = 0  # temperature
-        local_horizon = 0  # angle of the local horizon in radians
-        h = 0  # height
-        a = 0  # angle of the rocket in radians
-        gamma = math.pi * 0.5  # angle of the velocity in respect to the local horizon in radians
+        simulation_states = []
 
-        state = []
-
+        state = State()
+        state.orbit = Orbit(state.h, state.v, state.gamma)
         # ascent
         for i, stage in enumerate(self.stages):
             stage_time = 0
-            print(f'Igniting stage {i + 1} after {t}s - {stage.burn_time}s burn time')
+            print(f'Igniting stage {i + 1} after {state.t}s - {stage.burn_time}s burn time')
             # calculate the mass of the rest of the rocket
             eff_payload_mass = sum(s.mass_at_time(0) for s in self.stages[i + 1:])
-            orbit = None
+            last_stage = i == len(self.stages) - 1
 
             # iterate
             while stage_time < stage.burn_time:
-                m = eff_payload_mass + stage.mass_at_time(stage_time)
-                v += acceleration_in_dir_of_flight(stage.thrust, v, m, h, a, gamma, self) * self.time_step
-                h += v * math.cos(math.pi/2-gamma) * self.time_step
-                gamma += angular_velocity(stage.thrust, v, m, h, a, gamma) * self.time_step
-                temp = max_temperature(v, h, effective_nose_radius)
+                self.advance_state(state, stage, stage_time, eff_payload_mass)
+                state.description = 'Ascent'
+
+                # copy the state so it is not just a reference
+                simulation_states.append(copy.deepcopy(state))
                 stage_time += self.time_step
-                t += self.time_step
 
-                a = math.radians(self.gravity_turn.angle) if self.gravity_turn.start < h < self.gravity_turn.end else 0
-
-                local_horizon += math.atan(v * self.time_step * math.cos(gamma) / (earth_radius + h))
-
-                state.append((t, h, v, m, a, gamma, local_horizon, temp, 'Ascent'))
-
-                if i == len(self.stages) - 1:
-                    orbit = Orbit(h, v, gamma)
-                    if orbit.apoapsis_height >= self.target_orbit > 0:
-                        print(f'Apoapsis at target height - shutting off at [{t}s]')
+                # if a target orbit is specified - circularize on the last stage
+                if last_stage and self.target_orbit > 0:
+                    # check if the apoapsis is reached
+                    if state.orbit.apoapsis_height:
+                        print(f'Apoapsis at target height - shutting off at [{state.t}s]')
+                        self.circularize(state, stage, stage_time, eff_payload_mass, simulation_states)
                         break
-
-            if i == len(self.stages) - 1 and self.target_orbit > 0:
-                # wait for the rocket to reach the apoapsis
-                while h > 0 and abs(orbit.apoapsis_height - h) > self.target_orbit*0.001:
-                    h += v * math.cos(math.pi/2-gamma) * self.time_step
-                    gamma += angular_velocity(stage.thrust, v, m, h, a, gamma) * self.time_step
-                    temp = max_temperature(v, h, effective_nose_radius)
-                    t += self.time_step
-                    local_horizon += math.atan(v * self.time_step * math.cos(gamma) / (earth_radius + h))
-                    state.append((t, h, v, m, a, gamma, local_horizon, temp, 'Waiting for apoapsis'))
-                    orbit = Orbit(h, v, gamma)
-                print(f'Apoapsis reached: {round(h/1000,1)} km - circularizing [{t}s]')
-
-                # circularize
-                min_periapsis = h - 10000
-                while h > 0 and orbit.periapsis_height < self.target_orbit * .95 and stage_time < stage.burn_time:
-                    # wait for the rocket to reach the apoapsis
-                    m = eff_payload_mass + stage.mass_at_time(stage_time)
-                    v += acceleration_in_dir_of_flight(stage.thrust, v, m, h, a, gamma, self) * self.time_step
-                    h += v * math.cos(math.pi/2-gamma) * self.time_step
-                    gamma += angular_velocity(stage.thrust, v, m, h, a, gamma) * self.time_step
-                    temp = max_temperature(v, h, effective_nose_radius)
-                    stage_time += self.time_step
-                    t += self.time_step
-                    local_horizon += math.atan(v * self.time_step * math.cos(gamma) / (earth_radius + h))
-                    state.append((t, h, v, m, a, gamma, local_horizon, temp, 'Circularizing'))
-                    orbit = Orbit(h, v, gamma)
 
         print(f'Loss due to gravity: {self.loss_gravity} m/s')
         print(f'Loss due to drag: {self.loss_drag} m/s')
         print(f'Total deltaV: {self.deltaV} m/s')
         return state
+
+    def advance_state(self, state, stage, stage_time, eff_payload_mass, engines_on=True):
+        # advance the state by a time step and calculate the new values
+        if engines_on:
+            state.m = eff_payload_mass + stage.mass_at_time(stage_time)
+            state.v += Physics.acceleration_in_dir_of_flight(stage.thrust, state, effective_area, self) * self.time_step
+            stage_time += self.time_step
+
+        state.h += state.v * math.cos(math.pi / 2 - state.gamma) * self.time_step
+        state.gamma += Physics.angular_velocity(stage.thrust, state) * self.time_step
+        state.temp = Physics.max_temperature(state.v, state.h, effective_nose_radius)
+        state.t += self.time_step
+        state.orbit.update(state.h, state.v, state.gamma)
+
+        if self.gravity_turn.start < state.h < self.gravity_turn.end:
+            state.a = math.radians(self.gravity_turn.angle)
+        else:
+            state.a = 0
+
+        state.local_horizon += math.atan(state.v * self.time_step * math.cos(state.gamma) / (earth_radius + state.h))
+
+    def circularize(self, state, stage, stage_time, eff_payload_mass, simulation_states):
+        if self.target_orbit <= 0:
+            return
+
+        # wait for the rocket to reach the apoapsis if a target orbit is specified
+        while state.h > 0 and abs(state.orbit.apoapsis_height - state.h) > self.target_orbit * 0.001:
+            self.advance_state(state, stage, 0, 0, False)
+            state.description = 'Waiting for apoapsis'
+            simulation_states.append(copy.deepcopy(state))
+
+        print(f'Apoapsis reached: {round(state.h / 1000, 1)} km - circularizing [{state.t}s]')
+
+        # circularize
+        while state.h > 0 and state.orbit.periapsis_height < self.target_orbit * .95 and stage_time < stage.burn_time:
+            # wait for the periapsis to reach the target orbit or until the fuel runs out- because the drag is not
+            # considered it may not be reached exactly
+            self.advance_state(state, stage, stage_time, eff_payload_mass)
+            stage_time += self.time_step
+            state.description = 'Circularizing'
