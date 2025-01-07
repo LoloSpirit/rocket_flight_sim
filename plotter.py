@@ -145,7 +145,7 @@ class Plotter:
 
         print(max([t - 273.15 for t in self.temperature]))
 
-        update_trajectory(self.time[0])
+        update_trajectory(self.time[-1])
         plt.show()
 
     @staticmethod
