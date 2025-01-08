@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.4)  1 JAN 2025 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.4)  8 JAN 2025 13:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/lorenzsaalmann/PycharmProjects/rocket_flight_sim/rocket_flight_sim/Praktikum_Raumfahrt/main
-(/Users/lorenzsaalmann/PycharmProjects/rocket_flight_sim/rocket_flight_sim/Praktikum_Raumfahrt/main.tex
+**/Users/lorenzsaalmann/PycharmProjects/rocket_flight_sim/rocket_flight_sim/Praktikum_Raumfahrt_Ausarbeitung/main
+(/Users/lorenzsaalmann/PycharmProjects/rocket_flight_sim/rocket_flight_sim/Praktikum_Raumfahrt_Ausarbeitung/main.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -406,46 +406,56 @@ Package hyperref Info: Link coloring OFF on input line 26.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
+<images/jlu_logo.jpeg, id=12, 284.7438pt x 356.0502pt>
+File: images/jlu_logo.jpeg Graphic file (type jpg)
+<use images/jlu_logo.jpeg>
+Package pdftex.def Info: images/jlu_logo.jpeg  used on input line 36.
+(pdftex.def)             Requested size: 135.89174pt x 169.92422pt.
+<images/DLR_logo.png, id=13, 3011.25pt x 2007.5pt>
+File: images/DLR_logo.png Graphic file (type png)
+<use images/DLR_logo.png>
+Package pdftex.def Info: images/DLR_logo.png  used on input line 47.
+(pdftex.def)             Requested size: 67.94241pt x 45.274pt.
 
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 47.
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./images/jlu_logo.jpeg> <./images/DLR_logo.png>]
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 55.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 47.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 55.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 47.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 55.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 47.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 55.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 47.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 55.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
-<images/equations.png, id=19, 880.28876pt x 820.06375pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
+<images/equations.png, id=22, 880.28876pt x 820.06375pt>
 File: images/equations.png Graphic file (type png)
 <use images/equations.png>
-Package pdftex.def Info: images/equations.png  used on input line 54.
+Package pdftex.def Info: images/equations.png  used on input line 62.
 (pdftex.def)             Requested size: 452.9679pt x 421.96841pt.
-<images/output.png, id=23, 722.7pt x 578.16pt>
+<images/output.png, id=26, 722.7pt x 578.16pt>
 File: images/output.png Graphic file (type png)
 <use images/output.png>
-Package pdftex.def Info: images/output.png  used on input line 63.
+Package pdftex.def Info: images/output.png  used on input line 71.
 (pdftex.def)             Requested size: 452.9679pt x 362.37247pt.
 
 
@@ -460,15 +470,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.67 
+l.75 
       [1 <./images/equations.png>]
-<images/angle_over_time.png, id=37, 420.57124pt x 167.62625pt>
+<images/angle_over_time.png, id=40, 420.57124pt x 167.62625pt>
 File: images/angle_over_time.png Graphic file (type png)
 <use images/angle_over_time.png>
-Package pdftex.def Info: images/angle_over_time.png  used on input line 70.
+Package pdftex.def Info: images/angle_over_time.png  used on input line 78.
 (pdftex.def)             Requested size: 362.37569pt x 144.43199pt.
 
-Overfull \hbox (26.20985pt too wide) in paragraph at lines 82--84
+Overfull \hbox (26.20985pt too wide) in paragraph at lines 90--92
 []\T1/ptm/b/n/12 Verifizieren Sie ih-re Lö-sung für den ge-sam-ten An-triebs-be-darf $\OT1/ztmcm/m/n/12 ^^A\OML/ztmcm/m/it/12 v$ \T1/ptm/b/n/12 mit-hil-fe der Ziolkowski-
  []
 
@@ -491,18 +501,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3 <./images/angle_over_time.png>]
-<images/max_temp.png, id=61, 427.5975pt x 182.6825pt>
+<images/max_temp.png, id=64, 427.5975pt x 182.6825pt>
 File: images/max_temp.png Graphic file (type png)
 <use images/max_temp.png>
-Package pdftex.def Info: images/max_temp.png  used on input line 113.
+Package pdftex.def Info: images/max_temp.png  used on input line 121.
 (pdftex.def)             Requested size: 362.37569pt x 154.81812pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
 
  []
 
@@ -533,18 +543,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 028F771CC80AE95AA9E3A718320360C6;288.
  ) 
 Here is how much of TeX's memory you used:
- 11490 strings out of 473584
- 179495 string characters out of 5728329
+ 11504 strings out of 473584
+ 179903 string characters out of 5728329
  1936905 words of memory out of 5000000
- 34182 multiletter control sequences out of 15000+600000
+ 34196 multiletter control sequences out of 15000+600000
  599268 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,880b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,978b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 459744 bytes).
+Output written on main.pdf (6 pages, 752831 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
+ 125 PDF objects out of 1000 (max. 8388607)
  87 compressed objects within 1 object stream
  25 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 47 words of extra memory for PDF output out of 10000 (max. 10000000)
 

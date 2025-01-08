@@ -31,6 +31,10 @@
 
 \begin{titlepage}
     \centering
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.3\textwidth]{images/jlu_logo.jpeg}
+    \end{figure}
     \vspace*{2cm}
     \Large{Praktikumsaufgabe Raketen-Flugsimulator} \\
     \vspace{2cm}
@@ -38,6 +42,10 @@
     \vfill
     \normalsize{{Grundlagen der Raumfahrt, WS 24/25}} \\
     \small{Sebastian Karl, Martin Grabe} \\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.15\textwidth]{images/DLR_logo.png}
+    \end{figure}
 \end{titlepage}
 
 \newpage
@@ -61,15 +69,15 @@ Das Programm wurde in Python umgesetzt. Es besteht im Wesentlichen aus drei Skri
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{images/output.png}
-    \label{fig:output}
     \caption{Beispielhafte Ausgabe des Raketen-Flugsimulators}
+    \label{fig:output}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{images/angle_over_time.png}
-    \label{fig:angle}
     \caption{Flugbahnwinkel der Rakete über der Zeit}
+    \label{fig:angle}
 \end{figure}
 
 \subsection{Weitere Aufgaben}
@@ -111,8 +119,8 @@ Das Programm wurde in Python umgesetzt. Es besteht im Wesentlichen aus drei Skri
     \begin{figure}
         \centering
         \includegraphics[width=.8\textwidth]{images/max_temp.png}
-        \label{fig:max_temp}
         \caption{Maximale Temperatur der Raketenspitze über der Zeit}
+        \label{fig:max_temp}
     \end{figure}
 
     \item \textbf{Berechnen Sie die optimale Stufung für diese Raketenkonfiguration (gleiche Startmasse, gleicher Strukturindex). Wie hoch ist die potentielle Steigerung der Nutzlast?}\\
@@ -125,7 +133,7 @@ Das Programm wurde in Python umgesetzt. Es besteht im Wesentlichen aus drei Skri
 
     Wenn statt dem $\Delta v$ ein Zielorbit vorgegeben ist, kann nicht mehr einfach die Nutzlast berechnet werden, da die benötigte Geschwindigkeitsänderung von der Rakete abhängt. Für diesen Fall wird eine Abschätzung der Nutzlast über den nicht verwendeten Treibstoff gemacht.
 
-    Die optimale Stufung für die Konfiguration mit einer 10t Nutzlast ist in der folgenden Tabelle dargestellt:
+    Die optimale Stufung für die Konfiguration mit einer 10 t schweren Nutzlast ist in der folgenden Tabelle dargestellt:
     \begin{center}
         \begin{tabular}{c | c | c | c | c}
             Stufe & Strukturmasse [t] & Treibstoffmasse [t] & $\epsilon$ & Payload [t] \\
@@ -134,7 +142,7 @@ Das Programm wurde in Python umgesetzt. Es besteht im Wesentlichen aus drei Skri
             2 & 3.95 & 39.5 & 3.83 & 10 \\
         \end{tabular}
     \end{center}
-    Diese wurde numerisch ermittelt. Nun muss für die neue Raketenkonfiguration ein neues Flugprofil gefunden werden. Dafür wurde die Simulation so angepasst, dass es möglich ist den Antrieb auszuschalten und für ein Zirkularisierungsmanöver ernuet anzuschalten. So effizienter ein nahezu kreisförmiger Orbit gefunden werden. Mit einer TVC von $8.4 ^\circ$ zwischen 1 km und 9.25 km konnte ein Orbit mit einer Apoapsis von ca. 300 km und einer Periapsis von 270 km erreicht werden, indem ein Zirkularisierungsmanöver durchgeführt wird. Die Nutzlast plus dem übrigen Treibstoff beträgt dann ca. 11.1 t. Mit diesem Wert könnte man nun iterativ die optimale Stufung finden, im Rahmen dieses Praktikums soll aber nur eine Iteration durchgeführt werden.
+    Diese wurde numerisch ermittelt, der Code dafür befindet sich in \textit{stage.py}. Nun muss für die neue Raketenkonfiguration ein neues Flugprofil gefunden werden. Dafür wurde die Simulation so angepasst, dass es möglich ist den Antrieb auszuschalten und für ein Zirkularisierungsmanöver erneut anzuschalten. So kann effizienter ein nahezu kreisförmiger Orbit gefunden werden. Mit einer TVC von $8.4 ^\circ$ zwischen 1 km und 9.25 km konnte ein Orbit mit einer Apoapsis von ca. 300 km und einer Periapsis von 270 km erreicht werden, indem ein Zirkularisierungsmanöver durchgeführt wird. Die Nutzlast plus dem übrigen Treibstoff beträgt dann ca. 11.1 t. Mit diesem Wert könnte man nun mit dem gleichen Prozess iterativ die optimale Stufung annähern, im Rahmen dieses Praktikums soll aber nur eine Iteration durchgeführt werden.
     
 
 
