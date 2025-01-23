@@ -22,16 +22,15 @@ class Plotter:
         self.orbit = [state.orbit for state in result]
 
     def plot(self):
-        # Create a figure with GridSpec
         fig = plt.figure(figsize=(10, 8))
-        gs = GridSpec(4, 2, width_ratios=[1, 1])  # Left side is wider
+        gs = GridSpec(4, 2, width_ratios=[1, 1])
         ax1 = fig.add_subplot(gs[0, 1])
         ax2 = fig.add_subplot(gs[1, 1], sharex=ax1)
         ax3 = fig.add_subplot(gs[2, 1], sharex=ax1)
         ax4 = fig.add_subplot(gs[3, 1], sharex=ax1)
         ax_left = fig.add_subplot(gs[:, 0])
 
-        plt.subplots_adjust(bottom=0.25)  # Adjust to make room for the slider
+        plt.subplots_adjust(bottom=0.25)
 
         # Set up the slider
         ax_freq = plt.axes([0.2, 0.1, 0.65, 0.03], facecolor="black")
