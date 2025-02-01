@@ -71,7 +71,7 @@ class FlightSim:
                 simulation_states.append(copy.deepcopy(state))
                 stage_time += self.time_step
 
-                # if a target orbit is specified - circularize on the last stage
+                # handle engine shutdown on the last stage
                 if last_stage:
                     if state.orbit.apoapsis_height >= self.target_orbit:
                         if self.circ:
