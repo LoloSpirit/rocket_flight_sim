@@ -69,7 +69,7 @@ Das Programm wurde in Python umgesetzt. Es besteht im Wesentlichen aus drei Skri
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{images/output.png}
-    \caption{Beispielhafte Ausgabe des Raketen-Flugsimulators}
+    \caption{Beispielhafte Ausgabe des Raketen-Flugsimulators am Besipiel für Aufgabe 1}
     \label{fig:output}
 \end{figure}
 
@@ -84,9 +84,9 @@ Das Programm wurde in Python umgesetzt. Es besteht im Wesentlichen aus drei Skri
 \begin{enumerate}
     \setcounter{enumi}{2}
     \item  \textbf{Wie viel Treibstoff ist beim Erreichen des Orbits noch übrig?} \\
-    Beim Erreichen des Zielorbits ist kein Treibstoff mehr übrig.
+    Beim Erreichen des Zielorbits sind 197 kg Treibstoff übrig.
     \item \textbf{Wie hoch sind Gravitations- und aerodynamische Verluste und wie hoch ist der gesamte Antriebsbedarf $\Delta v$?} \\
-    Um die Gravitations- und aerodynamischen Verluste zu berechnen, werden in der Simulation die Terme $g \sin \gamma$ und $D/m$ mit dem Zeitschritt $\Delta t$ multipliziert und aufsummiert, wobei das vereinfachte Modell die Beschleunigung $g$ und den Widerstand $D$ abhängig von Höhe und Geschwindigkeit approximiert. Der gesamte Antriebsbedarf $\Delta v$ beträgt 9.36 km/s. Der Verlust durch Gravitation summiert sich zu 1.4 km/s und der Verlust durch den Luftwiderstand zu 195 m/s.
+    Um die Gravitations- und aerodynamischen Verluste zu berechnen, werden in der Simulation die Terme $g \sin \gamma$ und $D/m$ mit dem Zeitschritt $\Delta t$ multipliziert und aufsummiert, wobei das vereinfachte Modell die Beschleunigung $g$ und den Widerstand $D$ abhängig von Höhe und Geschwindigkeit approximiert. Der gesamte Antriebsbedarf $\Delta v$ beträgt 9.32 km/s. Der Verlust durch Gravitation summiert sich zu ca. 1.4 km/s und der Verlust durch den Luftwiderstand zu 199 m/s.
     \item \textbf{Verifizieren Sie ihre Lösung für den gesamten Antriebsbedarf $\Delta v$ mithilfe der Ziolkowski-Gleichung.} \\
     Die Ziolkowski-Gleichung lautet:
     \begin{equation}
@@ -142,11 +142,17 @@ Das Programm wurde in Python umgesetzt. Es besteht im Wesentlichen aus drei Skri
             2 & 3.95 & 39.5 & 3.83 & 10 \\
         \end{tabular}
     \end{center}
-    Diese wurde numerisch ermittelt, der Code dafür befindet sich in \textit{stage.py}. Nun muss für die neue Raketenkonfiguration ein neues Flugprofil gefunden werden. Dafür wurde die Simulation so angepasst, dass es möglich ist den Antrieb auszuschalten und für ein Zirkularisierungsmanöver erneut anzuschalten. So kann effizienter ein nahezu kreisförmiger Orbit gefunden werden. Mit einer TVC von $8.4 ^\circ$ zwischen 1 km und 9.25 km konnte ein Orbit mit einer Apoapsis von ca. 300 km und einer Periapsis von 270 km erreicht werden, indem ein Zirkularisierungsmanöver durchgeführt wird. Die Nutzlast plus dem übrigen Treibstoff beträgt dann ca. 11.1 t. Mit diesem Wert könnte man nun mit dem gleichen Prozess iterativ die optimale Stufung annähern, im Rahmen dieses Praktikums soll aber nur eine Iteration durchgeführt werden.
+    Diese wurde numerisch ermittelt, der Code dafür befindet sich in \textit{stage.py}. Nun muss für die neue Raketenkonfiguration ein neues Flugprofil gefunden werden. Dafür wurde die Simulation so angepasst, dass es möglich ist den Antrieb auszuschalten und für ein Zirkularisierungsmanöver erneut anzuschalten. So kann effizienter ein nahezu kreisförmiger Orbit gefunden werden. Mit einer TVC von $8.4 ^\circ$ zwischen 1 km und 9.25 km konnte ein Orbit mit einer Apoapsis von ca. 272.2 km und einer Periapsis von 268.5 km erreicht werden, indem ein Zirkularisierungsmanöver durchgeführt wird. Es sind dann 773 kg Treibstoff übrig, was eine große Verbesserung gegenüber den aus Aufgabe 1 ermittelten Wert darstellt. Mit diesem Wert könnte man nun mit dem gleichen Prozess iterativ die optimale Stufung annähern, im Rahmen dieses Praktikums soll aber nur eine Iteration durchgeführt werden.
     
 
 
 \end{enumerate}
+
+\appendix
+\section{Code}
+Der Code für den Raketen-Flugsimulator ist auf GitHub verfügbar und im Anhang der Email zur Abgage zu finden. Der Link zum Repository ist:
+
+\url{https://github.com/LoloSpirit/rocket_flight_sim/tree/main}.
 
 
 \end{document}

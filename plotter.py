@@ -126,23 +126,21 @@ class Plotter:
         time_slider.on_changed(update_trajectory)
 
         ax1.plot(self.time, [h * 0.001 for h in self.height])
-        height_pos, = ax1.plot((0, 0), 'ro', color='black')
+        height_pos, = ax1.plot((0, 0), 'o', color='black')
         ax1.set_ylabel('Height [km]')
 
         ax2.plot(self.time, self.velocity)
-        vel_pos, = ax2.plot((0, 0), 'ro', color='black')
+        vel_pos, = ax2.plot((0, 0), 'o', color='black')
         ax2.set_ylabel('Velocity [m/s]')
 
         ax3.plot(self.time, [m * 0.001 for m in self.mass])
-        mass_pos, = ax3.plot((0, 0), 'ro', color='black')
+        mass_pos, = ax3.plot((0, 0), 'o', color='black')
         ax3.set_ylabel('Mass [t]')
 
         ax4.plot(self.time, [t - 273.15 for t in self.temperature])
-        temp_pos, = ax4.plot((0, 0), 'ro', color='black')
+        temp_pos, = ax4.plot((0, 0), 'o', color='black')
         ax4.set_ylabel('max. Temperature [°C]')
         ax4.set_xlabel('Time [s]')
-
-        print(max([t - 273.15 for t in self.temperature]))
 
         update_trajectory(self.time[-1])
         plt.show()

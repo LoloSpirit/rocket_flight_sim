@@ -2,7 +2,7 @@ import math
 
 gravitational_constant = 6.67430 * 10 ** -11  # m^3 kg^-1 s^-2
 earth_mass = 5.972 * 10 ** 24  # kg
-earth_radius = 6371000  # m
+earth_radius = 6400000  # m, simplified
 # sutton-graves
 k = 1.7415e-4  # kg^0.5/m
 sigma = 5.67e-8  # W/m^2K^4

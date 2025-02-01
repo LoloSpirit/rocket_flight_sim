@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.4)  25 JAN 2025 16:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.4)  1 FEB 2025 17:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,12 +406,12 @@ Package hyperref Info: Link coloring OFF on input line 26.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-<images/jlu_logo.jpeg, id=12, 284.7438pt x 356.0502pt>
+<images/jlu_logo.jpeg, id=16, 284.7438pt x 356.0502pt>
 File: images/jlu_logo.jpeg Graphic file (type jpg)
 <use images/jlu_logo.jpeg>
 Package pdftex.def Info: images/jlu_logo.jpeg  used on input line 36.
 (pdftex.def)             Requested size: 135.89174pt x 169.92422pt.
-<images/DLR_logo.png, id=13, 3011.25pt x 2007.5pt>
+<images/DLR_logo.png, id=17, 3011.25pt x 2007.5pt>
 File: images/DLR_logo.png Graphic file (type png)
 <use images/DLR_logo.png>
 Package pdftex.def Info: images/DLR_logo.png  used on input line 47.
@@ -447,12 +447,12 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-<images/equations.png, id=22, 880.28876pt x 820.06375pt>
+<images/equations.png, id=26, 880.28876pt x 820.06375pt>
 File: images/equations.png Graphic file (type png)
 <use images/equations.png>
 Package pdftex.def Info: images/equations.png  used on input line 62.
 (pdftex.def)             Requested size: 452.9679pt x 421.96841pt.
-<images/output.png, id=26, 722.7pt x 578.16pt>
+<images/output.png, id=30, 722.7pt x 578.16pt>
 File: images/output.png Graphic file (type png)
 <use images/output.png>
 Package pdftex.def Info: images/output.png  used on input line 71.
@@ -472,7 +472,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.75 
       [1 <./images/equations.png>]
-<images/angle_over_time.png, id=40, 420.57124pt x 167.62625pt>
+<images/angle_over_time.png, id=44, 420.57124pt x 167.62625pt>
 File: images/angle_over_time.png Graphic file (type png)
 <use images/angle_over_time.png>
 Package pdftex.def Info: images/angle_over_time.png  used on input line 78.
@@ -501,7 +501,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3 <./images/angle_over_time.png>]
-<images/max_temp.png, id=64, 427.5975pt x 182.6825pt>
+<images/max_temp.png, id=68, 427.5975pt x 182.6825pt>
 File: images/max_temp.png Graphic file (type png)
 <use images/max_temp.png>
 Package pdftex.def Info: images/max_temp.png  used on input line 121.
@@ -526,6 +526,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4 <./images/max_temp.png>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 155.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -534,27 +538,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5] (./main.aux)
+[5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 028F771CC80AE95AA9E3A718320360C6;288.
+(rerunfilecheck)             Checksum: 4D1D28DF9674EEEF8746727C6703700B;352.
  ) 
 Here is how much of TeX's memory you used:
- 11504 strings out of 473584
- 179903 string characters out of 5728329
+ 11529 strings out of 473584
+ 180602 string characters out of 5728329
  1936905 words of memory out of 5000000
- 34196 multiletter control sequences out of 15000+600000
- 599268 words of font info for 92 fonts, out of 8000000 for 9000
+ 34215 multiletter control sequences out of 15000+600000
+ 599581 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,978b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 752831 bytes).
+ 75i,12n,79p,1039b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (6 pages, 777723 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
- 47 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
+ 26 named destinations out of 1000 (max. 500000)
+ 55 words of extra memory for PDF output out of 10000 (max. 10000000)
 
