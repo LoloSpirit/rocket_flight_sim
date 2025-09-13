@@ -1,0 +1,26 @@
+/Users/lorenzsaalmann/PycharmProjects/DLRSummerSchool/venv/bin/python /Users/lorenzsaalmann/PycharmProjects/DLRSummerSchool/staging.py
+Total mass: 15000.0
+Payload: 300
+Engine weight: 74.13585395236771
+c_1: 3230
+c_2: 3350
+MassFlow_1: 61.919504643962846
+MassFlow_2: 11.940298507462687
+m_dry_1: 924.126331472018
+m_dry_2: 111.560380536949
+stage mass ratio:  8.28364269666456
+m_propellant_1:  12659.2648146852
+m_propellant_2:  1005.04847330585
+m_total: 15000.0000000000
+6000.00000000000
+4140.81916114558
+m_fuel_1:2877.10563970118
+m_ox_1: 9782.15917498401
+m_fuel_2:228.420107569511
+m_ox_2: 776.628365736338
+Diameter: 1.15051655830384
+Stage 1 tank length: 13.8061986996460
+Stage 2 tank length: 1.09610622167726
+Effective Area: 0.415848959892818
+
+Process finished with exit code 0

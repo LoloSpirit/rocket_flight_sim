@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from orbit import Orbit
 
 # constants for this simulation
-effective_area = 15  # m^2
+effective_area = 0.41  # m^2
 effective_nose_radius = 0.5  # m
 
 class GravityTurn:
